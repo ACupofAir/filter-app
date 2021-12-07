@@ -8,7 +8,7 @@
   },
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^16.0.2"
+    "electron": "^1.8.4"
   },
   "dependencies": {
     "electro": "^2.1.1",

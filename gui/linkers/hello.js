@@ -23,7 +23,7 @@ let {PythonShell} = require('python-shell')
 var path = require("path")
 
 
-function get_weather() {
+function get_username() {
 
   var username = document.getElementById("username").value
   

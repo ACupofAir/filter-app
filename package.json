@@ -4,15 +4,32 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win --x64",
+    "package": "electron-packager ./ myapp --out ./OutApp --arch=x64  --overwrite --icon=filter.ico"
   },
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.8.4"
+    "electron": "^1.8.4",
+    "electron-builder": "^22.14.5"
   },
   "dependencies": {
     "electro": "^2.1.1",
     "python-shell": "^1.0.7"
+  },
+  "build": {
+    "appId": "com.filter.app",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
   }
-
 }

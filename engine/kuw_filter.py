@@ -3,6 +3,7 @@ import sys
 
 import numpy as np
 import cv2
+import os
 import matplotlib.pyplot as plt
 # from ipywidgets import interact
 from PIL import Image
@@ -29,25 +30,25 @@ def kuwahara(pic, r=5, resize=False, rate=0.5):
         *np.meshgrid(np.arange(h), np.arange(w))).astype(pic.dtype)
     return filtered_pic
 #%%
-img_path = '/home/long/Workspace/Personal/Learn/filter_app/gui/images/'
+#%%
+img_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 img_name = imgname
-url = img_path + img_name
+img_url = os.path.join(img_path, "gui","images", img_name)
 img_after_name = "after_filter_"+img_name 
-url_after_img = img_path + img_after_name
-pic = np.array(Image.open(
-url))
+img_after_url = os.path.join(img_path, "gui","images", img_after_name)
+pic = np.array(Image.open(img_url))
 im = pic.copy()
 r = 5
 rate = 20
-filtered_pic = kuwahara(im, r, 1, rate/100)
+filtered_pic = kuwahara(im, r, 0, rate/100)
 color_ture_pic = cv2.cvtColor(filtered_pic, cv2.COLOR_BGR2RGB)
-cv2.imwrite(url_after_img, color_ture_pic)
-print("Done!🥳")
+cv2.imwrite(img_after_url, color_ture_pic)
+print("Done!")
 sys.stdout.flush()
 # %%
 # Using for adjust prama
 
-# url = "/home/long/Workspace/Personal/Learn/filter_app/images/bojie.jpg"
+#img_url = "/home/long/Workspace/Personal/Learn/filter_app/images/bojie.jpg"
 
 # pic = np.array(Image.open(
 # url))

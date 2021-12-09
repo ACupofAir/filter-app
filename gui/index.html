@@ -8,6 +8,41 @@
 </head>
 
 <body>
-  <input id="imgname" type="text" placeholder="imgname" />
-  <button class="btn btn-success" onclick="filter_with_kuw()">hello</button>
+
+  <div class="container">
+    <table>
+      <tr style="padding: 50px;">
+        <td>
+          <img class="img-prev-container" id="img-prev-div" src="images/img_input_template.png"
+            style="max-width: 400px; max-height: 300px; border-radius: 8px;" />
+        </td>
+        <td>
+          <!-- <div class="img-prev-container" id="img-filter-div"> -->
+          <!-- </div> -->
+          <img class="img-prev-container" id="img-filter-div" src="images/img_input_template.png"
+            style="max-width: 400px; max-height: 300px; border-radius: 8px;" />
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div style="padding: 100px 100px 10px;">
+    <form class="bs-example bs-example-form" role="form">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+            <input type="text" class="form-control">
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+        <br>
+      </div><!-- /.row -->
+    </form>
+  </div>
+  <div style="text-align:center;vertical-align:middle;">
+    <input id="imgname" type="text" placeholder="imgname" />
+    <button class="btn btn-success" onclick="filter_with_kuw()">hello</button>
+  </div>
+
 </body>

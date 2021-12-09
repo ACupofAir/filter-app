@@ -1,3 +1,20 @@
 /* styles.css */
 
 /* Add styles here to customize the appearance of your app */
+/*主容器*/
+.container {
+  width: 90%;
+  margin-top: 20px;
+}
+/*图片预览容器*/
+.container .img-prev-container {
+  width: 200px;
+  height: 100px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+}
+/*预览图片样式*/
+.container .img-prev-container img {
+  width: 100px;
+  height: 100px;
+}

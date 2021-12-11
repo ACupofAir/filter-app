@@ -1,20 +1,45 @@
-/* styles.css */
-
+/* styles.css */ 
 /* Add styles here to customize the appearance of your app */
 /*主容器*/
-.container {
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.myTitle{
+  box-shadow: 0 0 20px #cac6c6;
   width: 90%;
-  margin-top: 20px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+  background-color: antiquewhite;
 }
-/*图片预览容器*/
-.container .img-prev-container {
-  width: 200px;
-  height: 100px;
-  margin: 10px auto;
-  border: 1px solid #ccc;
+.img_div{
+  box-shadow: 0 0 20px #cac6c6;
+  display: flex;
+  width: 90%;
+  border-radius: 7px;
 }
-/*预览图片样式*/
-.container .img-prev-container img {
-  width: 100px;
-  height: 100px;
+
+.img_input_div{
+  box-shadow: 0 0 20px #cac6c6;
+  overflow: scroll;
+  width: 400px;
+  height: 300px;
+  /* border: red solid 2px; */
+  margin: 5%;
+  
+}
+
+
+.img_output_div{
+  box-shadow: 0 0 20px #cac6c6;
+  overflow: scroll;
+  /* border: red solid 2px; */
+  margin: 5%;
+  width: 400px;
+  height: 300px;
 }

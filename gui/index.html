@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
   <title>Hello World!</title>
   <script src="linkers/kuw_filter.js"></script>
@@ -8,24 +9,23 @@
 </head>
 
 <body>
-
-  <div class="container">
-    <table>
-      <tr style="padding: 50px;">
-        <td>
-          <img class="img-prev-container" id="img-prev-div" src="images/img_input_template.png"
-            style="max-width: 400px; max-height: 300px; border-radius: 8px;" />
-        </td>
-        <td>
-          <!-- <div class="img-prev-container" id="img-filter-div"> -->
-          <!-- </div> -->
-          <img class="img-prev-container" id="img-filter-div" src="images/img_input_template.png"
-            style="max-width: 400px; max-height: 300px; border-radius: 8px;" />
-        </td>
-      </tr>
-    </table>
+  <div class="myTitle">
+    <h2>Image Processing Application</h2>
   </div>
-  <div style="padding: 100px 100px 10px;">
+
+  <div class="img_div">
+
+    <div class="img_input_div">
+          <img  id="img-prev-div" src = "images/input_template.jpg"  style=" width: 400px; height: 300px;" />
+    </div>
+
+    <div class="img_output_div">
+          <img  id="img-filter-div" src = "images/output_template.jpg"  style=" width: 400px; height: 300px;" />
+    </div>
+          
+  </div>
+
+  <div>
     <form class="bs-example bs-example-form" role="form">
       <div class="row">
         <div class="col-lg-6">
@@ -34,10 +34,10 @@
               <button class="btn btn-default" type="button">Go!</button>
             </span>
             <input type="text" class="form-control">
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+          </div>
+        </div>
         <br>
-      </div><!-- /.row -->
+      </div>
     </form>
   </div>
   <div style="text-align:center;vertical-align:middle;">

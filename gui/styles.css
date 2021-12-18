@@ -1,45 +1,57 @@
-/* styles.css */ 
+/* styles.css */
 /* Add styles here to customize the appearance of your app */
 /*主容器*/
-body{
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.myTitle{
-  box-shadow: 0 0 20px #cac6c6;
-  width: 90%;
-  border-radius: 7px;
+.myTitle {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 40px;
-  background-color: antiquewhite;
+  margin: 3vw;
+  border: black solid 4px;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 3em;
 }
-.img_div{
-  box-shadow: 0 0 20px #cac6c6;
+.img_div {
+  box-shadow: 0.2vh 0.2vh 0.5vh 0.3vh #22222233;
   display: flex;
   width: 90%;
   border-radius: 7px;
+  justify-content: center;
 }
 
-.img_input_div{
-  box-shadow: 0 0 20px #cac6c6;
-  overflow: scroll;
-  width: 400px;
-  height: 300px;
-  /* border: red solid 2px; */
-  margin: 5%;
-  
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
-
-.img_output_div{
+.img_input_div {
   box-shadow: 0 0 20px #cac6c6;
   overflow: scroll;
   /* border: red solid 2px; */
   margin: 5%;
-  width: 400px;
-  height: 300px;
+}
+
+.img_output_div {
+  box-shadow: 0 0 20px #cac6c6;
+  overflow: scroll;
+  /* border: red solid 2px; */
+  margin: 5%;
+}
+
+.choose-line {
+  display: inline-flex;
+  margin: 5%;
+  max-width: 70%;
+  justify-content: center;
 }

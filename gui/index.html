@@ -1,48 +1,81 @@
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <meta charset="UTF-8">
-  <title>Hello World!</title>
-  <script src="linkers/kuw_filter.js"></script>
-  <script src="../preload.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <title>Image Processor</title>
 
-<body>
-  <div class="myTitle">
-    <h2>Image Processing Application</h2>
-  </div>
+    <script src="linkers/linker.js"></script>
+    <script src="../preload.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
 
-  <div class="img_div">
-
-    <div class="img_input_div">
-          <img  id="img-prev-div" src = "images/input_template.jpg"  style=" width: 400px; height: 300px;" />
+  <body>
+    <div class="myTitle">
+      <div>Image Processor</div>
     </div>
 
-    <div class="img_output_div">
-          <img  id="img-filter-div" src = "images/output_template.jpg"  style=" width: 400px; height: 300px;" />
-    </div>
-          
-  </div>
+    <div class="img_div">
+      <div class="img_input_div">
+        <img
+          id="img-prev-div"
+          src="images/input_template.jpg"
+          class="img-responsive"
+        />
+      </div>
 
-  <div>
-    <form class="bs-example bs-example-form" role="form">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="input-group">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
-            <input type="text" class="form-control">
+      <div class="img_output_div">
+        <img
+          id="img-filter-div"
+          class="img-responsive"
+          src="images/output_template.jpg"
+        />
+      </div>
+    </div>
+
+    <div class="choose-line">
+      
+
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input
+            class="form-control"
+            id="imgname"
+            type="text"
+            placeholder="Input a image name"
+          />
+          <div class="input-group-btn">
+            <button id="filter_name" type="button" class="btn btn-default" tabindex="-1">
+              Choose a filter
+            </button>
+            <button
+              type="button"
+              class="btn btn-default dropdown-toggle"
+              data-toggle="dropdown"
+              tabindex="-1"
+              
+            >
+              <span class="caret"></span>
+              <span class="sr-only">切换下拉菜单</span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#" onclick="change_to_kuw()">Kuwa</a>
+              </li>
+              <li><a href="#">另一个功能</a></li>
+              <li><a href="#">其他</a></li>
+            </ul>
           </div>
         </div>
-        <br>
       </div>
-    </form>
-  </div>
-  <div style="text-align:center;vertical-align:middle;">
-    <input id="imgname" type="text" placeholder="imgname" />
-    <button class="btn btn-success" onclick="filter_with_kuw()">hello</button>
-  </div>
-
-</body>
+      <button class="btn btn-success" onclick="filter_img()">Go<span class="glyphicon glyphicon-chevron-right"></button>
+    </div>
+  </body>
+</html>

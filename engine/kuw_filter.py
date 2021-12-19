@@ -34,7 +34,7 @@ def kuwahara(pic, r=5, resize=False, rate=0.5):
 img_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 img_name = imgname
 img_url = os.path.join(img_path, "gui","images", img_name)
-img_after_name = "after_filter_"+img_name 
+img_after_name = "after_kuwa_filter_"+img_name 
 img_after_url = os.path.join(img_path, "gui","images", img_after_name)
 pic = np.array(Image.open(img_url))
 im = pic.copy()

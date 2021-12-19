@@ -1,19 +1,34 @@
 # coding=utf-8
+#%%
 import sys
 import numpy as np
 import cv2
 import os
 #import matplotlib.pyplot as plt
 import warnings
-import GLG
+imgname = sys.argv[1]
 warnings.filterwarnings("ignore")
 ALPHA = 0.8
 M = 256
 GROUP = 20
 
+def Trans_and_CalcD(H = [],T = []):
+    M = len(H)
+    Tar = np.zeros(M+1)
+    for i in range(M):
+        if H[i] != 0:
+            Tar[T[i]] = H[i]
+    D = 0
+    for i in range(0,M-1):
+        for j in range(i+1,M):
+            D = D + Tar[i] * Tar[j] * (j - i)
+    return D
+
+#%%
 
 def fglg(img):
-    height, width = np.shape(img)
+
+    height, width = img.shape
     Npix = height * width
     hist = cv2.calcHist([img], [0], None, [256], [0.0, 255.0])
 
@@ -121,20 +136,23 @@ def fglg(img):
              # There can be delete
             # if i == 0:
              #   T[n-1][k] = T[n-1][k-1]
-    D = GLG.Trans_and_CalcD(hist, T)
+    D = Trans_and_CalcD(hist, T)
 
     return T, D/(float(Npix) * (Npix - 1))
 
-imgname = sys.argv[1]
+#%%
+
+# imgname = 'woman.jpg'
 img_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 img_name = imgname
 img_url = os.path.join(img_path, "gui", "images", img_name)
-img_after_name = "after_filter_"+img_name
+img_after_name = "after_glg_filter_"+img_name
 img_after_url = os.path.join(img_path, "gui", "images", img_after_name)
 
 res = img_after_url
 
 img = cv2.imread(img_url, cv2.IMREAD_GRAYSCALE)
+#%%
 Trans, PixDist = fglg(img)
 height, width = np.shape(img)
 # reconstruct the enhangced image
@@ -142,8 +160,9 @@ image = np.copy(img)
 for i in range(0, height):
     for j in range(0, width):
         image[i][j] = Trans[img[i][j]]
-# print GLG.ten(img),GLG.ten(image)
 cv2.imwrite(res, image)
 
 print("Done!")
 sys.stdout.flush()
+
+# %%
